@@ -102,6 +102,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:orientation="horizontal">
 
         <EditText
@@ -118,6 +119,72 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_send_white_24dp" />
     </LinearLayout>
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btnline1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Line 1"
+        android:visibility="gone"
+        android:textSize="20sp" />
+    <Button
+        android:id="@+id/btnline2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Line 2"
+        android:visibility="gone"
+
+        android:textSize="20sp" />
+    <Button
+        android:id="@+id/btnblink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Blink"
+        android:visibility="gone"
+
+        android:textSize="20sp" />
+    <Button
+        android:id="@+id/btnautodisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Atuo display"
+        android:visibility="gone"
+
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnshowqr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Welcome "
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnGenerateQr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Show QR "
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnclear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Clear "
+        android:textSize="20sp" />
 
 </LinearLayout>
 

@@ -1,4 +1,13 @@
 <resources>
-    <string name="app_name">Simple USB Terminal</string>
+    <string name="app_name">3.5 inch Dynamic QR Code Display</string>
     <string name="devices">USB Devices</string>
+    <string name="support_message">If you need a help.</string>
+    <string name="get_in_touch">Get in Touch!</string>
+    <string name="bonrix">Bonrix Software System</string>
+    <string name="customer_support">Customer Support</string>
+    <string name="sales_support">Sales Support</string>
+    <string name="whatsapp_support">WhatsApp Support</string>
+    <string name="support_email">Support Email</string>
+    <string name="sales_email">Sales Email</string>
+    <string name="address">Address</string>
 </resources>
