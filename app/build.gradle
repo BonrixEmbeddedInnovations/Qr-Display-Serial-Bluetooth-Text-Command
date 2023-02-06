@@ -3,15 +3,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
     defaultConfig {
-        targetSdkVersion 32
+        targetSdkVersion 33
         minSdkVersion 19
         vectorDrawables.useSupportLibrary true
 
-        applicationId "com.easovation.dynamicqrpaytmdisplay"
-        versionCode 1
-        versionName "1.0"
+        applicationId "com.easovation.dynamicqrpaydisplay"
+        versionCode 2
+        versionName "1.1"
         multiDexEnabled true
     }
     compileOptions {

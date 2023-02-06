@@ -76,6 +76,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URLEncoder;
 import java.util.EnumSet;
 
 import androidmads.library.qrgenearator.QRGContents;
@@ -290,7 +291,8 @@ public class NewHomeFragment extends Fragment implements ServiceConnection, Seri
                 }
                 String orderid = Apputils.getCurrnetDateTime2();
 //                String upistring = Apputils.getUpiString("shraddhatradelink@yesbank", "Shraddha", etAmount.getText().toString(), orderid);
-                String upistring = Apputils.getUpiString(PrefManager.getPref(getActivity(), PrefManager.PREF_UPIID).trim(), PrefManager.getPref(getActivity(), PrefManager.PREF_PAYEENAME).trim(), etAmount.getText().toString(), orderid);
+//                String upistring = Apputils.getUpiString(PrefManager.getPref(getActivity(), PrefManager.PREF_UPIID).trim(), PrefManager.getPref(getActivity(), PrefManager.PREF_PAYEENAME).trim(), etAmount.getText().toString(), orderid);
+                String upistring = Apputils.getUpiString(PrefManager.getPref(getActivity(), PrefManager.PREF_UPIID).trim(), PrefManager.getPref(getActivity(), PrefManager.PREF_PAYEENAME).trim().replace(" ","%20"), etAmount.getText().toString(), orderid);
                 Log.e("TAG", "upistring  " + upistring);
 
                 if (TextUtils.isEmpty(upistring)) {
@@ -313,7 +315,8 @@ public class NewHomeFragment extends Fragment implements ServiceConnection, Seri
     private void displayTxnQr() {
         String orderid = Apputils.getCurrnetDateTime2();
 //        String upistring = Apputils.getUpiString("shraddhatradelink@yesbank", "Shraddha", "10".toString(), orderid);
-        String upistring = Apputils.getUpiString(PrefManager.getPref(getActivity(), PrefManager.PREF_UPIID).trim(), PrefManager.getPref(getActivity(), PrefManager.PREF_PAYEENAME).trim(), etAmount.getText().toString(), orderid);
+//        String upistring = Apputils.getUpiString(PrefManager.getPref(getActivity(), PrefManager.PREF_UPIID).trim(), PrefManager.getPref(getActivity(), PrefManager.PREF_PAYEENAME).trim(), etAmount.getText().toString(), orderid);
+        String upistring = Apputils.getUpiString(PrefManager.getPref(getActivity(), PrefManager.PREF_UPIID).trim(), PrefManager.getPref(getActivity(), PrefManager.PREF_PAYEENAME).trim().replace(" ","%20"), etAmount.getText().toString(), orderid);
         if (TextUtils.isEmpty(upistring)) {
             Toast.makeText(getActivity(), "Invalid UPI Data", Toast.LENGTH_SHORT).show();
         } else {

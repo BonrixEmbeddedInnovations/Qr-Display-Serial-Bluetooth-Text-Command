@@ -17,7 +17,6 @@ import java.util.Locale;
 public class Apputils {
 
 
-
     public static Dialog showDialogProgressBarNew(Context context) {
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -33,6 +32,18 @@ public class Apputils {
     public static String getUpiString(String upi_payee, String payeename, String amt, String txid) {
         String sendstring = "";
         String upistring = "upi://pay?pa=<upi_payee>&pn=<payee_name>&am=<amt>&cu=INR&tn=<txid>&tr=<txid>&tid=<txid>";
+//        String upistring = "upi://pay?pa=<upi_payee>&pn=<payee_name>&oobe=fos123&qrst=stk&tr=11805909345abcd&am=<amt>&cu=INR&tn=11805909345abcd&tid=11805909345abcd";
+        upistring = upistring.replaceAll("<upi_payee>", upi_payee);
+        upistring = upistring.replaceAll("<payee_name>", payeename);
+        upistring = upistring.replaceAll("<amt>", amt);
+        upistring = upistring.replaceAll("<txid>", txid);
+        return upistring;
+    }
+
+    public static String getPhonepayUpiString(String upi_payee, String payeename, String amt, String txid) {
+        String sendstring = "";
+        String upistring = "upi://pay?pa=<upi_payee>&pn=<payee_name>&mc=0000&mode=02&purpose=00&am=<amt>&cu=INR";
+
         upistring = upistring.replaceAll("<upi_payee>", upi_payee);
         upistring = upistring.replaceAll("<payee_name>", payeename);
         upistring = upistring.replaceAll("<amt>", amt);
@@ -49,7 +60,8 @@ public class Apputils {
     }
 
     public static String getCurrnetDateTime2() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault());
         return sdf.format(new Date());
     }
 
