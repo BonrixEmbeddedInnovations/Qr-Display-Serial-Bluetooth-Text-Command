@@ -1,0 +1,1 @@
+com.easovation.customerfacingqrdisplay_bt.test

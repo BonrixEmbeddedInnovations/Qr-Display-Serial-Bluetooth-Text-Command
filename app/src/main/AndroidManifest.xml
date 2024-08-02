@@ -2,21 +2,28 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.bonrix.dynamicqrcode">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!-- mipmap/ic_launcher created with Android Studio -> New -> Image Asset using @color/colorPrimaryDark as background color -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="32"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
     <application
+
         android:icon="@mipmap/app_icon"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/app_icon"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-
         <activity
-            android:name="com.bonrix.dynamicqrcode.MainActivity"
+            android:name="com.bonrix.dynamicqrcode.BTMainActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:windowSoftInputMode="stateHidden|adjustResize">
@@ -24,22 +31,14 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
-                android:resource="@xml/usb_device_filter" />
         </activity>
-        <activity android:name=".activity.AboutActivity" />
-        <activity android:name="com.bonrix.dynamicqrcode.activity.TransactionActivity" />
-        <activity android:name="com.bonrix.dynamicqrcode.activity.DateWiseTransactionActivity" />
-
-        <service android:name="com.bonrix.dynamicqrcode.SerialService" />
+        <activity android:name=".activity.MqqtActivity"/>
+        <activity android:name=".BluetoothActivity"/>
+        <service android:name=".SerialService"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>

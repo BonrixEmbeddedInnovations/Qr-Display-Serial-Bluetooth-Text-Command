@@ -1,0 +1,149 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.easovation.customerfacingqrdisplay_bt"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:5:5-67
+11-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+12-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:6:5-77
+12-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:6:22-74
+13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+13-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:7:5-81
+13-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:7:22-78
+14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+14-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:8:5-80
+14-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:8:22-77
+15    <uses-permission android:name="android.permission.WAKE_LOCK" />
+15-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:9:5-68
+15-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:9:22-65
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:10:5-79
+16-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:10:22-76
+17    <uses-permission
+17-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:12:5-94
+18        android:name="android.permission.BLUETOOTH"
+18-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:12:22-65
+19        android:maxSdkVersion="32" />
+19-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:12:66-92
+20    <uses-permission
+20-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:13:5-100
+21        android:name="android.permission.BLUETOOTH_ADMIN"
+21-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:13:22-71
+22        android:maxSdkVersion="30" />
+22-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:13:72-98
+23    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+23-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:14:5-75
+23-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:14:22-73
+24    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+24-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:15:5-72
+24-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:15:22-70
+25
+26    <application
+26-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:16:5-42:19
+27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+27-->[androidx.core:core:1.7.0] /Users/bhargavhada/.gradle/caches/transforms-3/0c734a8f9451ded3159b05d46fc9a23a/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+28        android:debuggable="true"
+29        android:icon="@mipmap/app_icon"
+29-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:18:9-40
+30        android:label="@string/app_name"
+30-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:19:9-41
+31        android:requestLegacyExternalStorage="true"
+31-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:20:9-52
+32        android:roundIcon="@mipmap/app_icon"
+32-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:21:9-45
+33        android:testOnly="true"
+34        android:theme="@style/AppTheme"
+34-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:22:9-40
+35        android:usesCleartextTraffic="true" >
+35-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:23:9-44
+36        <activity
+36-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:25:9-34:20
+37            android:name="com.bonrix.dynamicqrcode.BTMainActivity"
+37-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:26:13-67
+38            android:exported="true"
+38-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:27:13-36
+39            android:launchMode="singleTask"
+39-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:28:13-44
+40            android:windowSoftInputMode="stateHidden|adjustResize" >
+40-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:29:13-67
+41            <intent-filter>
+41-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:30:13-33:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:31:17-69
+42-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:31:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:32:17-77
+44-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:32:27-74
+45            </intent-filter>
+46        </activity>
+47        <activity android:name="com.bonrix.dynamicqrcode.activity.MqqtActivity" />
+47-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:35:9-58
+47-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:35:19-56
+48        <activity android:name="com.bonrix.dynamicqrcode.BluetoothActivity" />
+48-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:36:9-54
+48-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:36:19-52
+49
+50        <service android:name="com.bonrix.dynamicqrcode.SerialService" />
+50-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:37:9-49
+50-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:37:18-47
+51
+52        <meta-data
+52-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:38:9-40:57
+53            android:name="preloaded_fonts"
+53-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:39:13-43
+54            android:resource="@array/preloaded_fonts" />
+54-->/Users/bhargavhada/Bhargav Workspace/Bonrix Work/Git Source/Text Command Code/Qr_display_serial_bt_text_command/app/src/main/AndroidManifest.xml:40:13-54
+55
+56        <activity
+56-->[io.github.ParkSangGwon:tedpermission:3.3.0] /Users/bhargavhada/.gradle/caches/transforms-3/a5946fc8b2c16db95db252274778369f/transformed/jetified-tedpermission-3.3.0/AndroidManifest.xml:10:9-14:67
+57            android:name="com.gun0912.tedpermission.TedPermissionActivity"
+57-->[io.github.ParkSangGwon:tedpermission:3.3.0] /Users/bhargavhada/.gradle/caches/transforms-3/a5946fc8b2c16db95db252274778369f/transformed/jetified-tedpermission-3.3.0/AndroidManifest.xml:11:13-75
+58            android:configChanges="mcc|mnc|locale|keyboard|keyboardHidden|screenLayout|fontScale|uiMode|orientation|screenSize|layoutDirection"
+58-->[io.github.ParkSangGwon:tedpermission:3.3.0] /Users/bhargavhada/.gradle/caches/transforms-3/a5946fc8b2c16db95db252274778369f/transformed/jetified-tedpermission-3.3.0/AndroidManifest.xml:12:13-144
+59            android:screenOrientation="unspecified"
+59-->[io.github.ParkSangGwon:tedpermission:3.3.0] /Users/bhargavhada/.gradle/caches/transforms-3/a5946fc8b2c16db95db252274778369f/transformed/jetified-tedpermission-3.3.0/AndroidManifest.xml:13:13-52
+60            android:theme="@style/Theme.Transparent.Permission" />
+60-->[io.github.ParkSangGwon:tedpermission:3.3.0] /Users/bhargavhada/.gradle/caches/transforms-3/a5946fc8b2c16db95db252274778369f/transformed/jetified-tedpermission-3.3.0/AndroidManifest.xml:14:13-64
+61
+62        <provider
+62-->[io.github.ParkSangGwon:tedpermission:3.3.0] /Users/bhargavhada/.gradle/caches/transforms-3/a5946fc8b2c16db95db252274778369f/transformed/jetified-tedpermission-3.3.0/AndroidManifest.xml:16:9-19:40
+63            android:name="com.gun0912.tedpermission.provider.TedPermissionProvider"
+63-->[io.github.ParkSangGwon:tedpermission:3.3.0] /Users/bhargavhada/.gradle/caches/transforms-3/a5946fc8b2c16db95db252274778369f/transformed/jetified-tedpermission-3.3.0/AndroidManifest.xml:17:13-84
+64            android:authorities="com.easovation.customerfacingqrdisplay_bt.tedpermissionprovider"
+64-->[io.github.ParkSangGwon:tedpermission:3.3.0] /Users/bhargavhada/.gradle/caches/transforms-3/a5946fc8b2c16db95db252274778369f/transformed/jetified-tedpermission-3.3.0/AndroidManifest.xml:18:13-73
+65            android:exported="false" />
+65-->[io.github.ParkSangGwon:tedpermission:3.3.0] /Users/bhargavhada/.gradle/caches/transforms-3/a5946fc8b2c16db95db252274778369f/transformed/jetified-tedpermission-3.3.0/AndroidManifest.xml:19:13-37
+66        <provider
+66-->[androidx.emoji2:emoji2:1.0.0] /Users/bhargavhada/.gradle/caches/transforms-3/73850b32b2c7ce32b12b91c16b2382c2/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+67            android:name="androidx.startup.InitializationProvider"
+67-->[androidx.emoji2:emoji2:1.0.0] /Users/bhargavhada/.gradle/caches/transforms-3/73850b32b2c7ce32b12b91c16b2382c2/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+68            android:authorities="com.easovation.customerfacingqrdisplay_bt.androidx-startup"
+68-->[androidx.emoji2:emoji2:1.0.0] /Users/bhargavhada/.gradle/caches/transforms-3/73850b32b2c7ce32b12b91c16b2382c2/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+69            android:exported="false" >
+69-->[androidx.emoji2:emoji2:1.0.0] /Users/bhargavhada/.gradle/caches/transforms-3/73850b32b2c7ce32b12b91c16b2382c2/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+70            <meta-data
+70-->[androidx.emoji2:emoji2:1.0.0] /Users/bhargavhada/.gradle/caches/transforms-3/73850b32b2c7ce32b12b91c16b2382c2/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+71                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+71-->[androidx.emoji2:emoji2:1.0.0] /Users/bhargavhada/.gradle/caches/transforms-3/73850b32b2c7ce32b12b91c16b2382c2/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+72                android:value="androidx.startup" />
+72-->[androidx.emoji2:emoji2:1.0.0] /Users/bhargavhada/.gradle/caches/transforms-3/73850b32b2c7ce32b12b91c16b2382c2/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+73            <meta-data
+73-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/bhargavhada/.gradle/caches/transforms-3/280b8c662ae12c28e2c58a98b88e76a9/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+74                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+74-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/bhargavhada/.gradle/caches/transforms-3/280b8c662ae12c28e2c58a98b88e76a9/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+75                android:value="androidx.startup" />
+75-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/bhargavhada/.gradle/caches/transforms-3/280b8c662ae12c28e2c58a98b88e76a9/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+76        </provider>
+77    </application>
+78
+79</manifest>

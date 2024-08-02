@@ -1,41 +1,40 @@
 package com.bonrix.dynamicqrcode;
 
 import android.app.Activity;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.hardware.usb.UsbDeviceConnection;
-
-import com.hoho.android.usbserial.driver.UsbSerialPort;
-import com.hoho.android.usbserial.util.SerialInputOutputManager;
 
 import java.io.IOException;
 import java.security.InvalidParameterException;
+import java.util.Arrays;
+import java.util.UUID;
+import java.util.concurrent.Executors;
 
-public class SerialSocket implements SerialInputOutputManager.Listener {
+class SerialSocket implements Runnable {
 
-        private static final int READ_WAIT_MILLIS = 500; // 0 blocked infinitely on unprogrammed arduino
-    private static final int WRITE_WAIT_MILLIS = 80000; // 0 blocked infinitely on unprogrammed arduino
+    private static final UUID BLUETOOTH_SPP = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
     private final BroadcastReceiver disconnectBroadcastReceiver;
 
     private final Context context;
     private SerialListener listener;
-    private UsbDeviceConnection connection;
-    private UsbSerialPort serialPort;
-    private SerialInputOutputManager ioManager;
+    private final BluetoothDevice device;
+    private BluetoothSocket socket;
+    private boolean connected;
 
-    SerialSocket(Context context, UsbDeviceConnection connection, UsbSerialPort serialPort) {
-        if (context instanceof Activity)
+    SerialSocket(Context context, BluetoothDevice device) {
+        if(context instanceof Activity)
             throw new InvalidParameterException("expected non UI context");
         this.context = context;
-        this.connection = connection;
-        this.serialPort = serialPort;
+        this.device = device;
         disconnectBroadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                if (listener != null)
+                if(listener != null)
                     listener.onSerialIoError(new IOException("background disconnect"));
                 disconnect(); // disconnect now, else would be queued until UI re-attached
             }
@@ -43,40 +42,27 @@ public class SerialSocket implements SerialInputOutputManager.Listener {
     }
 
     String getName() {
-        return serialPort.getDriver().getClass().getSimpleName().replace("SerialDriver", "");
+        return device.getName() != null ? device.getName() : device.getAddress();
     }
 
+    /**
+     * connect-success and most connect-errors are returned asynchronously to listener
+     */
     void connect(SerialListener listener) throws IOException {
         this.listener = listener;
         context.registerReceiver(disconnectBroadcastReceiver, new IntentFilter(Constants.INTENT_ACTION_DISCONNECT));
-        serialPort.setDTR(true); // for arduino, ...
-        serialPort.setRTS(true);
-        ioManager = new SerialInputOutputManager(serialPort, this);
-        ioManager.start();
+        Executors.newSingleThreadExecutor().submit(this);
     }
 
     void disconnect() {
         listener = null; // ignore remaining data and errors
-        if (ioManager != null) {
-            ioManager.setListener(null);
-            ioManager.stop();
-            ioManager = null;
-        }
-        if (serialPort != null) {
+        // connected = false; // run loop will reset connected
+        if(socket != null) {
             try {
-                serialPort.setDTR(false);
-                serialPort.setRTS(false);
+                socket.close();
             } catch (Exception ignored) {
             }
-            try {
-                serialPort.close();
-            } catch (Exception ignored) {
-            }
-            serialPort = null;
-        }
-        if (connection != null) {
-            connection.close();
-            connection = null;
+            socket = null;
         }
         try {
             context.unregisterReceiver(disconnectBroadcastReceiver);
@@ -85,20 +71,49 @@ public class SerialSocket implements SerialInputOutputManager.Listener {
     }
 
     void write(byte[] data) throws IOException {
-        if (serialPort == null)
+        if (!connected)
             throw new IOException("not connected");
-        serialPort.write(data, WRITE_WAIT_MILLIS);
+        socket.getOutputStream().write(data);
     }
 
     @Override
-    public void onNewData(byte[] data) {
-        if (listener != null)
-            listener.onSerialRead(data);
+    public void run() { // connect & read
+        try {
+            socket = device.createRfcommSocketToServiceRecord(BLUETOOTH_SPP);
+            socket.connect();
+            if(listener != null)
+                listener.onSerialConnect();
+        } catch (Exception e) {
+            if(listener != null)
+                listener.onSerialConnectError(e);
+            try {
+                socket.close();
+            } catch (Exception ignored) {
+            }
+            socket = null;
+            return;
+        }
+        connected = true;
+        try {
+            byte[] buffer = new byte[1024];
+            int len;
+            //noinspection InfiniteLoopStatement
+            while (true) {
+                len = socket.getInputStream().read(buffer);
+                byte[] data = Arrays.copyOf(buffer, len);
+                if(listener != null)
+                    listener.onSerialRead(data);
+            }
+        } catch (Exception e) {
+            connected = false;
+            if (listener != null)
+                listener.onSerialIoError(e);
+            try {
+                socket.close();
+            } catch (Exception ignored) {
+            }
+            socket = null;
+        }
     }
 
-    @Override
-    public void onRunError(Exception e) {
-        if (listener != null)
-            listener.onSerialIoError(e);
-    }
 }

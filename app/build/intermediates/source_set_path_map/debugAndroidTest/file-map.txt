@@ -1,0 +1,7 @@
+com.bonrix.dynamicqrcode.test.app-androidTest-0 /Users/bhargavhada/Bhargav Workspace/Bonrix Work/Qr Projects/3.5_Inch_AllinOneQrDisplayWithBluetooth/app/build/generated/res/resValues/androidTest/debug
+com.bonrix.dynamicqrcode.test.app-androidTest-1 /Users/bhargavhada/Bhargav Workspace/Bonrix Work/Qr Projects/3.5_Inch_AllinOneQrDisplayWithBluetooth/app/build/generated/res/rs/androidTest/debug
+com.bonrix.dynamicqrcode.test.app-mergeDebugAndroidTestResources-2 /Users/bhargavhada/Bhargav Workspace/Bonrix Work/Qr Projects/3.5_Inch_AllinOneQrDisplayWithBluetooth/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.bonrix.dynamicqrcode.test.app-mergeDebugAndroidTestResources-3 /Users/bhargavhada/Bhargav Workspace/Bonrix Work/Qr Projects/3.5_Inch_AllinOneQrDisplayWithBluetooth/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.bonrix.dynamicqrcode.test.app-merged_res-4 /Users/bhargavhada/Bhargav Workspace/Bonrix Work/Qr Projects/3.5_Inch_AllinOneQrDisplayWithBluetooth/app/build/intermediates/merged_res/debugAndroidTest
+com.bonrix.dynamicqrcode.test.app-androidTest-5 /Users/bhargavhada/Bhargav Workspace/Bonrix Work/Qr Projects/3.5_Inch_AllinOneQrDisplayWithBluetooth/app/src/androidTest/res
+com.bonrix.dynamicqrcode.test.app-androidTestDebug-6 /Users/bhargavhada/Bhargav Workspace/Bonrix Work/Qr Projects/3.5_Inch_AllinOneQrDisplayWithBluetooth/app/src/androidTestDebug/res
